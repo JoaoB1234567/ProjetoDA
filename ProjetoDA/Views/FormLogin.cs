@@ -10,7 +10,7 @@ namespace ProjetoDA.Views
 
         public FormLogin()
         {
-            InitializeComponent(); // Agora ele já deve encontrar este método!
+            InitializeComponent();
             _loginController = new LoginController();
 
             txtPassword.PasswordChar = '*';
@@ -18,7 +18,6 @@ namespace ProjetoDA.Views
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            // Verifica se as caixas de texto existem com estes nomes exatos
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
@@ -30,14 +29,18 @@ namespace ProjetoDA.Views
 
             if (_loginController.ValidarLogin(username, password))
             {
-                MessageBox.Show($"Bem-vindo, {SessaoGlobal.UtilizadorLogadoNome}!", "Sucesso");
-                // Quando tiveres o menu principal, descomenta a linha abaixo:
-                // new FormPrincipal().Show(); 
+                MessageBox.Show($"Bem-vindo, {SessaoGlobal.UtilizadorLogadoNome}!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                FormListaCompras principal = new FormListaCompras();
+                principal.Show();
+
                 this.Hide();
             }
             else
             {
                 MessageBox.Show("Credenciais erradas!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Clear();
+                txtPassword.Focus();
             }
         }
     }
