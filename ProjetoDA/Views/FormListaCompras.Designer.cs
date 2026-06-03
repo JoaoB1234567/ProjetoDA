@@ -47,7 +47,7 @@
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(173, 54);
             this.btnSair.TabIndex = 0;
-            this.btnSair.Text = "Logout";
+            this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
