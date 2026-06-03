@@ -33,6 +33,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
+            this.btnRegistar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -78,11 +79,21 @@
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
+            // btnRegistar
+            // 
+            this.btnRegistar.Location = new System.Drawing.Point(79, 256);
+            this.btnRegistar.Name = "btnRegistar";
+            this.btnRegistar.Size = new System.Drawing.Size(389, 34);
+            this.btnRegistar.TabIndex = 5;
+            this.btnRegistar.Text = "Registar";
+            this.btnRegistar.UseVisualStyleBackColor = true;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 274);
+            this.ClientSize = new System.Drawing.Size(545, 299);
+            this.Controls.Add(this.btnRegistar);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -102,6 +113,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnEntrar;
+        private System.Windows.Forms.Button btnRegistar;
     }
 }
 
