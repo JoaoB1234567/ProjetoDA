@@ -76,6 +76,7 @@
             this.btnEntrar.TabIndex = 4;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // FormLogin
             // 
@@ -89,7 +90,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FormLogin";
             this.Text = "Login";
-            this.Click += new System.EventHandler(this.btnEntrar_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
