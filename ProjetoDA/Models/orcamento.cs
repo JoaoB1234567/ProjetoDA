@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoDA.Models
+namespace IShopping.Model
 {
-    public class Orcamento
+    public class orcamento
     {
         [Key]
         public int id { get; set; }
@@ -17,7 +17,7 @@ namespace ProjetoDA.Models
 
         [Required]
         public decimal valor_max { get; set; }        
-        public User userCriador { get; set; }
-        public User userAlterador { get; set; }
+        public user userCriador { get; set; }
+        public user userAlterador { get; set; }
     }
 }
