@@ -46,6 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\artigo.cs" />
+    <Compile Include="Models\artigoNaoPrevisto.cs" />
+    <Compile Include="Models\artigoPrevisto.cs" />
+    <Compile Include="Models\compra.cs" />
+    <Compile Include="Models\itemCompra.cs" />
+    <Compile Include="Models\orcamento.cs" />
+    <Compile Include="Models\shoppingContext.cs" />
+    <Compile Include="Models\tipoArtigo.cs" />
+    <Compile Include="Models\user.cs" />
     <Compile Include="SessaoGlobal.cs" />
     <Compile Include="Views\FormListaCompras.cs">
       <SubType>Form</SubType>
@@ -132,8 +141,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
