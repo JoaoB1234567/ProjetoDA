@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoDA.Models
 {
-    internal class artigo
+    public class Artigo
     {
+        [Key]
+        public int id { get; set; }
     }
 }
