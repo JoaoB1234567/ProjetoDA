@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IShopping.Model
+namespace ProjetoDA.Models
 {    
-    public class tipoArtigo
+    public class TipoArtigo
     {
         [Key]
         public int Id { get; set; }
 
-        [StringLength(150), Required]
+        [StringLength(100), Required]
         public string Categoria { get; set; }
     }
 }

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IShopping.Model
+namespace ProjetoDA.Models
 {
-    public class artigoPrevisto : itemCompra
+    public class ItemNaoPrevisto : ItemCompra
     {
-        public int qntPrevista {  get; set; }
+        public string descricao {  get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IShopping.Model
+namespace ProjetoDA.Models
 {
     public enum Estado { aberto = 1, fechado = 2, padrao = 0 }
     public class Compra
@@ -14,7 +14,7 @@ namespace IShopping.Model
         [Key]
         public int id { get; set; }
 
-        [StringLength(150), Required]
+        [StringLength(100), Required]
         public string nome { get; set; }
 
         [Required]
@@ -24,9 +24,9 @@ namespace IShopping.Model
         public DateTime DataAlteracao { get; set; } = DateTime.Now;
         public DateTime? dataFechar { get; set; }
         
-        public virtual user userCriador { get; set; }
-        public virtual user userFechou { get; set; }
+        public virtual User userCriador { get; set; }
+        public virtual User userFechou { get; set; }
         
-        public virtual List<itemCompra> listaCompra { get; set; } = new List<itemCompra>();
+        public virtual List<ItemCompra> listaCompra { get; set; } = new List<ItemCompra>();
     }
 }

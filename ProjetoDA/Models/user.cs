@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace IShopping.Model
+namespace ProjetoDA.Models
 {    
-    public class user
+    public class User
     {
         [Key] public int id { get; set; }
 
-        [StringLength(150)]
+        [StringLength(100)]
         [Index(IsUnique = true)] 
         public string username { get; set; }
 
-        [StringLength(150)]
+        [StringLength(100)]
         public string password {  get; set; }
         public override string ToString()
         {
