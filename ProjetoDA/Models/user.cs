@@ -3,16 +3,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjetoDA.Models {
     public class User {
-        [Key] public int id { get; set; }
+        [Key] public int Id { get; set; }
 
         [StringLength(100)]
         [Index(IsUnique = true)]
-        public string username { get; set; }
+        public string Username { get; set; }
 
         [StringLength(100)]
-        public string password { get; set; }
+        public string Password { get; set; }
         public override string ToString() {
-            return username;
+            return Username;
         }
 
     }
