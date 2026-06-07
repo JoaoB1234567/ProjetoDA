@@ -1,18 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Entity;
 using MySql.Data.EntityFramework;
 
-namespace ProjetoDA.Models
-{
+namespace ProjetoDA.Models {
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
-    public class ShoppingContext: DbContext
-    {
-        public ShoppingContext() : base("ShoppingContext")
-        {
+    public class ShoppingContext : DbContext {
+        public ShoppingContext() : base("ShoppingContext") {
         }
 
         public DbSet<User> users { get; set; }

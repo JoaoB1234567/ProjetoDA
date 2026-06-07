@@ -1,6 +1,6 @@
-﻿using ProjetoDA.Controllers;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using ProjetoDA.Controllers;
 
 namespace ProjetoDA.Views {
     public partial class FormLogin : Form {

@@ -2,16 +2,13 @@
 using System.Windows.Forms;
 using ProjetoDA.Views; // Esta é a linha que falta para resolver o erro!
 
-namespace ProjetoDA
-{
-    internal static class Program
-    {
+namespace ProjetoDA {
+    internal static class Program {
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
         [STAThread]
-        static void Main()
-        {
+        static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
