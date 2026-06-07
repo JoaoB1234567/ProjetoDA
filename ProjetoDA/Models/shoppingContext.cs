@@ -7,15 +7,15 @@ namespace ProjetoDA.Models {
         public ShoppingContext() : base("ShoppingContext") {
         }
 
-        public DbSet<User> users { get; set; }
-        public DbSet<TipoArtigo> tipos { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<TipoArtigo> Tipos { get; set; }
 
-        public DbSet<Artigo> artigos { get; set; }
-        public DbSet<ItemCompra> itemCompras { get; set; }
-        public DbSet<Compra> compras { get; set; }
-        public DbSet<Orcamento> orcamentos { get; set; }
-        public DbSet<ItemPrevisto> artigoPrevistos { get; set; }
-        public DbSet<ItemNaoPrevisto> artigoNaoPrevistos { get; set; }
+        public DbSet<Artigo> Artigos { get; set; }
+        public DbSet<ItemCompra> ItemCompras { get; set; }
+        public DbSet<Compra> Compras { get; set; }
+        public DbSet<Orcamento> Orcamentos { get; set; }
+        public DbSet<ItemPrevisto> ArtigoPrevistos { get; set; }
+        public DbSet<ItemNaoPrevisto> ArtigoNaoPrevistos { get; set; }
 
     }
 }

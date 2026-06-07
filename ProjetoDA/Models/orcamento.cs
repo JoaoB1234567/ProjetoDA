@@ -4,14 +4,14 @@ using System.ComponentModel.DataAnnotations;
 namespace ProjetoDA.Models {
     public class Orcamento {
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        public DateTime mes { get; set; }
+        public DateTime Mes { get; set; }
 
         [Required]
-        public decimal valor_max { get; set; }
-        public User userCriador { get; set; }
-        public User userAlterador { get; set; }
+        public decimal ValorMaximo { get; set; }
+        public User UserCriador { get; set; }
+        public User UserAlterador { get; set; }
     }
 }
