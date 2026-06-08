@@ -5,5 +5,12 @@ namespace ProjetoDA.Views {
         public Formulário_CriaçãoAlteração_Compra_Planeada() {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+
     }
 }

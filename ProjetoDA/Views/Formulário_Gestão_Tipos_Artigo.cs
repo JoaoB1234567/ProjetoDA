@@ -5,5 +5,7 @@ namespace ProjetoDA.Views {
         public Formulário_de_Gestão_de_Tipos_de_Artigo() {
             InitializeComponent();
         }
+
+
     }
 }
