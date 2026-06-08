@@ -11,6 +11,9 @@ namespace ProjetoDA {
         /// </summary>
         [STAThread]
         static void Main() {
+            System.Globalization.CultureInfo.DefaultThreadCurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+            System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
+
             Database.SetInitializer(new AppDbInitializer());
 
             Application.EnableVisualStyles();
