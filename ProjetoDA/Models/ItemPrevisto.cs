@@ -1,5 +1,9 @@
-﻿namespace ProjetoDA.Models {
-    public class ItemPrevisto : ItemCompra {
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ProjetoDA.Models
+{
+    public class ItemPrevisto : ItemCompra
+    {
         public int QuantidadePrevista { get; set; }
     }
 }
