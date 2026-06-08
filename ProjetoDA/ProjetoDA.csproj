@@ -109,6 +109,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AppDbInitializer.cs" />
     <Compile Include="Models\Artigo.cs" />
     <Compile Include="Models\ItemNaoPrevisto.cs" />
     <Compile Include="Models\ItemPrevisto.cs" />
