@@ -5,7 +5,7 @@ namespace ProjetoDA.Controllers {
     public class LoginController {
         public bool ValidarLogin(string username, string password) {
             using (var db = new ShoppingContext()) {
-                var user = db.Users.Where(u => u.Username == username && u.Password == password).First();
+                var user = db.Users.Where(u => u.Username == username && u.Password == password).FirstOrDefault();
                 
                 if (user == null) {
                     return false;

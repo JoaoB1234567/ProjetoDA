@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Windows.Forms;
+using ProjetoDA.Controllers;
 using ProjetoDA.Views; // Esta é a linha que falta para resolver o erro!
 
 namespace ProjetoDA {
@@ -9,6 +11,8 @@ namespace ProjetoDA {
         /// </summary>
         [STAThread]
         static void Main() {
+            Database.SetInitializer(new AppDbInitializer());
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
