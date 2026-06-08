@@ -194,6 +194,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Formulário_CriaçãoAlteração_Compra_Planeada.resx">
+      <DependentUpon>Formulário_CriaçãoAlteração_Compra_Planeada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Formulário_Gestão_Artigos.resx">
+      <DependentUpon>Formulário_Gestão_Artigos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Formulário_Gestão_Tipos_Artigo.resx">
+      <DependentUpon>Formulário_Gestão_Tipos_Artigo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
