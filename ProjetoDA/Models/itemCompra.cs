@@ -1,11 +1,15 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ProjetoDA.Models {
-    public class ItemCompra {
+namespace ProjetoDA.Models
+{
+    public class ItemCompra
+    {
         [Key]
         public int Id { get; set; }
+
         public int QuantidadeAdquirida { get; set; }
+
         public decimal PrecoUnitario { get; set; }
 
         public virtual Artigo Artigo { get; set; }
