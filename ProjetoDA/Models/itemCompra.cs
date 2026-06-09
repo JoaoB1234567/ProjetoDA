@@ -8,6 +8,8 @@ namespace ProjetoDA.Models
         [Key]
         public int Id { get; set; }
 
+        public int QuantidadePrevista { get; set; }
+
         public int QuantidadeAdquirida { get; set; }
 
         public decimal PrecoUnitario { get; set; }

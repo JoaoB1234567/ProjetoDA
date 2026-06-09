@@ -114,7 +114,6 @@
     <Compile Include="Controllers\AppDbInitializer.cs" />
     <Compile Include="Controllers\CompraController.cs" />
     <Compile Include="Controllers\PlaneamentoController.cs" />
-    <Compile Include="Controllers\CriacaoCompraController.cs" />
     <Compile Include="Models\Artigo.cs" />
     <Compile Include="Models\ItemNaoPrevisto.cs" />
     <Compile Include="Models\ItemPrevisto.cs" />
