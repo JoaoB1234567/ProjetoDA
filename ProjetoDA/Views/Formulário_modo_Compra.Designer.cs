@@ -7,29 +7,6 @@ namespace ProjetoDA.Views
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        private System.Windows.Forms.Label lblNomeCompra;
-        private System.Windows.Forms.DataGridView dgvItensCompra;
-        private System.Windows.Forms.GroupBox grpRegistarItem;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numQtdAdquirida;
-        private System.Windows.Forms.TextBox txtPrecoUnitario;
-        private System.Windows.Forms.Button btnRegistarItem;
-        private System.Windows.Forms.GroupBox grpAdicionarExtra;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbTipoArtigoExtra;
-        private System.Windows.Forms.ComboBox cmbArtigoExtra;
-        private System.Windows.Forms.NumericUpDown numQtdExtra;
-        private System.Windows.Forms.TextBox txtPrecoExtra;
-        private System.Windows.Forms.TextBox txtObservacoes;
-        private System.Windows.Forms.Button btnAdicionarExtra;
-        private System.Windows.Forms.Label lblOrcamentoDisponivel;
-        private System.Windows.Forms.Button btnFecharCompra;
-
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -52,6 +29,7 @@ namespace ProjetoDA.Views
         private void InitializeComponent()
         {
             this.lblNomeCompra = new System.Windows.Forms.Label();
+            this.lblOrcamentoDisponivel = new System.Windows.Forms.Label();
             this.dgvItensCompra = new System.Windows.Forms.DataGridView();
             this.grpRegistarItem = new System.Windows.Forms.GroupBox();
             this.btnRegistarItem = new System.Windows.Forms.Button();
@@ -70,7 +48,8 @@ namespace ProjetoDA.Views
             this.lblArtigoExtra = new System.Windows.Forms.Label();
             this.cmbTipoArtigoExtra = new System.Windows.Forms.ComboBox();
             this.lblTipoArtigoExtra = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdicionarExtra = new System.Windows.Forms.Button();
+            this.btnFecharCompra = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensCompra)).BeginInit();
             this.grpRegistarItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQtdAdquirida)).BeginInit();
@@ -87,6 +66,15 @@ namespace ProjetoDA.Views
             this.lblNomeCompra.Size = new System.Drawing.Size(600, 31);
             this.lblNomeCompra.TabIndex = 6;
             this.lblNomeCompra.Text = "A Listar Compras:";
+            // 
+            // lblOrcamentoDisponivel
+            // 
+            this.lblOrcamentoDisponivel.Location = new System.Drawing.Point(24, 12);
+            this.lblOrcamentoDisponivel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOrcamentoDisponivel.Name = "lblOrcamentoDisponivel";
+            this.lblOrcamentoDisponivel.Size = new System.Drawing.Size(400, 25);
+            this.lblOrcamentoDisponivel.TabIndex = 5;
+            this.lblOrcamentoDisponivel.Text = "Saldo Disponível: --";
             // 
             // dgvItensCompra
             // 
@@ -166,7 +154,7 @@ namespace ProjetoDA.Views
             // 
             // grpAdicionarExtra
             // 
-            this.grpAdicionarExtra.Controls.Add(this.button1);
+            this.grpAdicionarExtra.Controls.Add(this.btnAdicionarExtra);
             this.grpAdicionarExtra.Controls.Add(this.txtObservacoes);
             this.grpAdicionarExtra.Controls.Add(this.lblObservacoes);
             this.grpAdicionarExtra.Controls.Add(this.txtPrecoExtra);
@@ -283,15 +271,16 @@ namespace ProjetoDA.Views
             this.lblTipoArtigoExtra.TabIndex = 10;
             this.lblTipoArtigoExtra.Text = "Tipo Artigo:";
             // 
-            // button1
+            // btnAdicionarExtra
             // 
-            this.button1.Location = new System.Drawing.Point(343, 201);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 43);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Inserir artigo não previsto";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdicionarExtra.Location = new System.Drawing.Point(343, 201);
+            this.btnAdicionarExtra.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdicionarExtra.Name = "btnAdicionarExtra";
+            this.btnAdicionarExtra.Size = new System.Drawing.Size(189, 43);
+            this.btnAdicionarExtra.TabIndex = 11;
+            this.btnAdicionarExtra.Text = "Inserir artigo não previsto";
+            this.btnAdicionarExtra.UseVisualStyleBackColor = true;
+            this.btnAdicionarExtra.Click += new System.EventHandler(this.BtnAdicionarExtra_Click);
             // 
             // Formulário_modo_Compra
             // 
@@ -302,6 +291,12 @@ namespace ProjetoDA.Views
             this.Controls.Add(this.grpRegistarItem);
             this.Controls.Add(this.dgvItensCompra);
             this.Controls.Add(this.lblNomeCompra);
+            this.Controls.Add(this.lblOrcamentoDisponivel);
+            this.Controls.Add(this.btnFecharCompra);
+            this.Load += new System.EventHandler(this.Formulário_modo_Compra_Load);
+            this.dgvItensCompra.SelectionChanged += new System.EventHandler(this.DgvItensCompra_SelectionChanged);
+            this.cmbTipoArtigoExtra.SelectedIndexChanged += new System.EventHandler(this.CmbTipoArtigoExtra_SelectedIndexChanged);
+            this.btnRegistarItem.Click += new System.EventHandler(this.BtnRegistarItem_Click);
             this.Name = "Formulário_modo_Compra";
             this.Text = "Formulário_modo_Compra";
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensCompra)).EndInit();
@@ -326,7 +321,7 @@ namespace ProjetoDA.Views
         private System.Windows.Forms.NumericUpDown numQtdAdquirida;
         private System.Windows.Forms.Label lblQtdAdquirida;
         private System.Windows.Forms.GroupBox grpAdicionarExtra;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdicionarExtra;
         private System.Windows.Forms.TextBox txtObservacoes;
         private System.Windows.Forms.Label lblObservacoes;
         private System.Windows.Forms.TextBox txtPrecoExtra;
@@ -337,5 +332,7 @@ namespace ProjetoDA.Views
         private System.Windows.Forms.Label lblArtigoExtra;
         private System.Windows.Forms.ComboBox cmbTipoArtigoExtra;
         private System.Windows.Forms.Label lblTipoArtigoExtra;
+        private System.Windows.Forms.Label lblOrcamentoDisponivel;
+        private System.Windows.Forms.Button btnFecharCompra;
     }
 }
