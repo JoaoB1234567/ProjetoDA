@@ -1,4 +1,4 @@
-﻿namespace ProjetoDA.Views
+namespace ProjetoDA.Views
 {
     partial class Formulário_Planeamento_Compras
     {
@@ -6,6 +6,13 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.ComboBox cmbFiltroEstado;
+        private System.Windows.Forms.DataGridView dgvCompras;
+        private System.Windows.Forms.Button btnNovaCompra;
+        private System.Windows.Forms.Button btnEditarCompra;
 
         /// <summary>
         /// Clean up any resources being used.

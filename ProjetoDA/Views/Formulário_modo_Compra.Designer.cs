@@ -1,4 +1,4 @@
-﻿namespace ProjetoDA.Views
+namespace ProjetoDA.Views
 {
     partial class Formulário_modo_Compra
     {
@@ -6,6 +6,29 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+
+        private System.Windows.Forms.Label lblNomeCompra;
+        private System.Windows.Forms.DataGridView dgvItensCompra;
+        private System.Windows.Forms.GroupBox grpRegistarItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numQtdAdquirida;
+        private System.Windows.Forms.TextBox txtPrecoUnitario;
+        private System.Windows.Forms.Button btnRegistarItem;
+        private System.Windows.Forms.GroupBox grpAdicionarExtra;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbTipoArtigoExtra;
+        private System.Windows.Forms.ComboBox cmbArtigoExtra;
+        private System.Windows.Forms.NumericUpDown numQtdExtra;
+        private System.Windows.Forms.TextBox txtPrecoExtra;
+        private System.Windows.Forms.TextBox txtObservacoes;
+        private System.Windows.Forms.Button btnAdicionarExtra;
+        private System.Windows.Forms.Label lblOrcamentoDisponivel;
+        private System.Windows.Forms.Button btnFecharCompra;
 
         /// <summary>
         /// Clean up any resources being used.

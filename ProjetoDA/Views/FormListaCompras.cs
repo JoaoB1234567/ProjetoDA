@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 using ProjetoDA.Controller;
@@ -44,61 +44,60 @@ namespace ProjetoDA.Views {
         private void btnSair_Click(object sender, EventArgs e) {
             FormLogin principal = new FormLogin();
             principal.Show();
-
-            this.Hide();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e) {
             var f = new Formulário_de_Gestão_de_Tipos_de_Artigo();
-            f.Show();
-            this.Hide();
+            f.ShowDialog();
+            LoadCompras();
         }
 
         private void button5_Click(object sender, EventArgs e) {
             var f = new Formulário_Gestão_Artigos();
-            f.Show();
-            this.Hide();
+            f.ShowDialog();
+            LoadCompras();
         }
 
         private void button6_Click(object sender, EventArgs e) {
             var f = new Formulário_Gestão_Orçamentos();
-            f.Show();
-            this.Hide();
+            f.ShowDialog();
+            LoadCompras();
         }
 
         private void button7_Click(object sender, EventArgs e) {
-            var f = new Formulário_CriaçãoAlteração_Compra_Planeada();
-            f.Show();
-            this.Hide();
+            var f = new Formulário_Planeamento_Compras();
+            f.ShowDialog();
+            LoadCompras();
         }
 
         private void button8_Click(object sender, EventArgs e) {
             var f = new Formulário_CriaçãoAlteração_Compra_Planeada();
-            f.Show();
-            this.Hide();
+            f.ShowDialog();
+            LoadCompras();
         }
 
         private void button9_Click(object sender, EventArgs e) {
-            // Modo Compra - reusing the criação/alteração form for now
-            var f = new Formulário_CriaçãoAlteração_Compra_Planeada();
-            f.Show();
-            this.Hide();
+            if (listBox1.SelectedValue != null && int.TryParse(listBox1.SelectedValue.ToString(), out int id)) {
+                var f = new Formulário_modo_Compra(id);
+                f.ShowDialog();
+                LoadCompras();
+            } else {
+                MessageBox.Show("Selecione uma compra na lista para entrar no Modo Compra.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void button10_Click(object sender, EventArgs e) {
             var f = new Formulário_Estatísticas();
-            f.Show();
-            this.Hide();
+            f.ShowDialog();
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e) {
-            var selected = listBox1.SelectedItem as Compra;
-            if (selected == null) return;
-
-            // Open the creation/edit form - could be extended to pass the selected compra id
-            var f = new Formulário_CriaçãoAlteração_Compra_Planeada();
-            f.Show();
-            this.Hide();
+            if (listBox1.SelectedValue != null && int.TryParse(listBox1.SelectedValue.ToString(), out int id)) {
+                var f = new Formulário_CriaçãoAlteração_Compra_Planeada(id);
+                f.ShowDialog();
+                LoadCompras();
+            }
         }
     }
 }

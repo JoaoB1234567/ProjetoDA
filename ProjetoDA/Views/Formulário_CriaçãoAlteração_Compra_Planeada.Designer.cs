@@ -1,4 +1,4 @@
-﻿namespace ProjetoDA.Views
+namespace ProjetoDA.Views
 {
     partial class Formulário_CriaçãoAlteração_Compra_Planeada
     {
@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnRemover = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtNomeCompra = new System.Windows.Forms.TextBox();
+            this.dgvItensPlaneados = new System.Windows.Forms.DataGridView();
+            this.btnRemoverItem = new System.Windows.Forms.Button();
+            this.btnAtualizarItem = new System.Windows.Forms.Button();
+            this.btnGuardarCompra = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnAdicionarItem = new System.Windows.Forms.Button();
+            this.cmbArtigo = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.numQuantidadePrevista = new System.Windows.Forms.NumericUpDown();
+            this.cmbTipoArtigo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItensPlaneados)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantidadePrevista)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,59 +56,63 @@
             this.label1.Size = new System.Drawing.Size(266, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome da Lista de Compras:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // txtNomeCompra
             // 
-            this.textBox1.Location = new System.Drawing.Point(298, 52);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(519, 34);
-            this.textBox1.TabIndex = 1;
+            this.txtNomeCompra.Location = new System.Drawing.Point(298, 52);
+            this.txtNomeCompra.Multiline = true;
+            this.txtNomeCompra.Name = "txtNomeCompra";
+            this.txtNomeCompra.Size = new System.Drawing.Size(519, 34);
+            this.txtNomeCompra.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvItensPlaneados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 126);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(787, 411);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvItensPlaneados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItensPlaneados.Location = new System.Drawing.Point(30, 126);
+            this.dgvItensPlaneados.Name = "dgvItensPlaneados";
+            this.dgvItensPlaneados.RowHeadersWidth = 51;
+            this.dgvItensPlaneados.RowTemplate.Height = 24;
+            this.dgvItensPlaneados.Size = new System.Drawing.Size(787, 411);
+            this.dgvItensPlaneados.TabIndex = 2;
+            this.dgvItensPlaneados.SelectionChanged += new System.EventHandler(this.DgvItensPlaneados_SelectionChanged);
             // 
-            // btnRemover
+            // btnRemoverItem
             // 
-            this.btnRemover.Location = new System.Drawing.Point(30, 577);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(270, 52);
-            this.btnRemover.TabIndex = 3;
-            this.btnRemover.Text = "Remover";
-            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemoverItem.Location = new System.Drawing.Point(30, 577);
+            this.btnRemoverItem.Name = "btnRemoverItem";
+            this.btnRemoverItem.Size = new System.Drawing.Size(270, 52);
+            this.btnRemoverItem.TabIndex = 3;
+            this.btnRemoverItem.Text = "Remover";
+            this.btnRemoverItem.UseVisualStyleBackColor = true;
+            this.btnRemoverItem.Click += new System.EventHandler(this.BtnRemoverItem_Click);
             // 
-            // button2
+            // btnAtualizarItem
             // 
-            this.button2.Location = new System.Drawing.Point(306, 577);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(270, 52);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Atualizar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAtualizarItem.Location = new System.Drawing.Point(306, 577);
+            this.btnAtualizarItem.Name = "btnAtualizarItem";
+            this.btnAtualizarItem.Size = new System.Drawing.Size(270, 52);
+            this.btnAtualizarItem.TabIndex = 4;
+            this.btnAtualizarItem.Text = "Atualizar";
+            this.btnAtualizarItem.UseVisualStyleBackColor = true;
+            this.btnAtualizarItem.Click += new System.EventHandler(this.BtnAtualizarItem_Click);
             // 
-            // button3
+            // btnGuardarCompra
             // 
-            this.button3.Location = new System.Drawing.Point(933, 577);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(270, 52);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Guardar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGuardarCompra.Location = new System.Drawing.Point(933, 577);
+            this.btnGuardarCompra.Name = "btnGuardarCompra";
+            this.btnGuardarCompra.Size = new System.Drawing.Size(270, 52);
+            this.btnGuardarCompra.TabIndex = 5;
+            this.btnGuardarCompra.Text = "Guardar";
+            this.btnGuardarCompra.UseVisualStyleBackColor = true;
+            this.btnGuardarCompra.Click += new System.EventHandler(this.BtnGuardarCompra_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.btnAdicionarItem);
+            this.groupBox1.Controls.Add(this.cmbArtigo);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.numQuantidadePrevista);
+            this.groupBox1.Controls.Add(this.cmbTipoArtigo);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(857, 126);
@@ -117,25 +122,58 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Adicionar artigo ao planeamento";
             // 
-            // numericUpDown1
+            // btnAdicionarItem
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(253, 100);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(54, 22);
-            this.numericUpDown1.TabIndex = 12;
+            this.btnAdicionarItem.Location = new System.Drawing.Point(29, 219);
+            this.btnAdicionarItem.Name = "btnAdicionarItem";
+            this.btnAdicionarItem.Size = new System.Drawing.Size(278, 48);
+            this.btnAdicionarItem.TabIndex = 15;
+            this.btnAdicionarItem.Text = "Adicionar";
+            this.btnAdicionarItem.UseVisualStyleBackColor = true;
+            this.btnAdicionarItem.Click += new System.EventHandler(this.BtnAdicionarItem_Click);
             // 
-            // textBox3
+            // cmbArtigo
             // 
-            this.textBox3.Location = new System.Drawing.Point(101, 41);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 25);
-            this.textBox3.TabIndex = 11;
+            this.cmbArtigo.FormattingEnabled = true;
+            this.cmbArtigo.Location = new System.Drawing.Point(101, 100);
+            this.cmbArtigo.Name = "cmbArtigo";
+            this.cmbArtigo.Size = new System.Drawing.Size(206, 24);
+            this.cmbArtigo.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 154);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 16);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Qtd:";
+            // 
+            // numQuantidadePrevista
+            // 
+            this.numQuantidadePrevista.Location = new System.Drawing.Point(101, 152);
+            this.numQuantidadePrevista.Name = "numQuantidadePrevista";
+            this.numQuantidadePrevista.Size = new System.Drawing.Size(206, 22);
+            this.numQuantidadePrevista.TabIndex = 12;
+            this.numQuantidadePrevista.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // cmbTipoArtigo
+            // 
+            this.cmbTipoArtigo.FormattingEnabled = true;
+            this.cmbTipoArtigo.Location = new System.Drawing.Point(101, 41);
+            this.cmbTipoArtigo.Name = "cmbTipoArtigo";
+            this.cmbTipoArtigo.Size = new System.Drawing.Size(206, 24);
+            this.cmbTipoArtigo.TabIndex = 11;
+            this.cmbTipoArtigo.SelectedIndexChanged += new System.EventHandler(this.CmbTipoArtigo_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 102);
+            this.label4.Location = new System.Drawing.Point(26, 103);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 16);
             this.label4.TabIndex = 9;
@@ -150,41 +188,26 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Categoria:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(216, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 16);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Qtd:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(76, 100);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 14;
-            // 
             // Formulário_CriaçãoAlteração_Compra_Planeada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1235, 651);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnRemover);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnGuardarCompra);
+            this.Controls.Add(this.btnAtualizarItem);
+            this.Controls.Add(this.btnRemoverItem);
+            this.Controls.Add(this.dgvItensPlaneados);
+            this.Controls.Add(this.txtNomeCompra);
             this.Controls.Add(this.label1);
             this.Name = "Formulário_CriaçãoAlteração_Compra_Planeada";
-            this.Text = "Formulário_CriaçãoAlteração_Compra_Planeada";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Projeto DA - Criar / Editar Planeamento";
+            this.Load += new System.EventHandler(this.Formulário_CriaçãoAlteração_Compra_Planeada_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItensPlaneados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantidadePrevista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,17 +216,18 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnRemover;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtNomeCompra;
+        private System.Windows.Forms.DataGridView dgvItensPlaneados;
+        private System.Windows.Forms.Button btnRemoverItem;
+        private System.Windows.Forms.Button btnAtualizarItem;
+        private System.Windows.Forms.Button btnGuardarCompra;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.NumericUpDown numQuantidadePrevista;
+        private System.Windows.Forms.ComboBox cmbTipoArtigo;
+        private System.Windows.Forms.ComboBox cmbArtigo;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnAdicionarItem;
     }
 }
