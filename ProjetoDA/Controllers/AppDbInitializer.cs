@@ -152,13 +152,16 @@ namespace ProjetoDA.Controllers
             {
                 itensNaoPrevistos.Add(new ItemNaoPrevisto
                 {
-                    ItemCompra = ItensPrevistos[i],
+                    Compra = Compras[i + 2],
+                    Artigo = Artigos[i % Artigos.Count],
                     QuantidadeAdquirida = 1 + (i % 3),
+                    PrecoUnitario = 3.50m + i,
+                    UserCriador = Users[0],
                     Observacoes = $"Aquisição pontual não planeada {i + 1}"
                 });
             }
 
-            context.Set<ItemNaoPrevisto>().AddRange(itensNaoPrevistos);
+            context.ItemCompras.AddRange(itensNaoPrevistos);
 
             context.SaveChanges();
 
