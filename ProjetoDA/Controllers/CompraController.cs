@@ -82,7 +82,9 @@ namespace ProjetoDA.Controller
         {
             using (var context = new ShoppingContext())
             {
-                return context.Artigos.Where(a => a.TipoArtigoId == tipoId).ToList();
+                return context.Artigos
+                    .Where(a => a.TipoArtigoId == tipoId)
+                    .ToList();
             }
         }
 
@@ -109,7 +111,8 @@ namespace ProjetoDA.Controller
                     item.DataAlteracao = DateTime.Now;
 
                     var compra = context.Compras.Find(compraId);
-                    if (compra != null) compra.DataAlteracao = DateTime.Now;
+                    if (compra != null)
+                        compra.DataAlteracao = DateTime.Now;
 
                     context.SaveChanges();
                 }
@@ -137,7 +140,9 @@ namespace ProjetoDA.Controller
                 };
 
                 context.ItemCompras.Add(novoItemExtra);
-                if (compraAtual != null) compraAtual.DataAlteracao = DateTime.Now;
+
+                if (compraAtual != null)
+                    compraAtual.DataAlteracao = DateTime.Now;
 
                 context.SaveChanges();
             }
@@ -150,7 +155,9 @@ namespace ProjetoDA.Controller
                 int mesAtual = DateTime.Now.Month;
                 int anoAtual = DateTime.Now.Year;
 
-                var orcamentoMes = context.Orcamentos.FirstOrDefault(o => o.Mes.Month == mesAtual && o.Mes.Year == anoAtual);
+                var orcamentoMes = context.Orcamentos
+                    .FirstOrDefault(o => o.Mes.Month == mesAtual && o.Mes.Year == anoAtual);
+
                 decimal valorDisponivel = orcamentoMes != null ? orcamentoMes.ValorMaximo : 250.00m;
 
                 decimal totalGastoCompra = context.ItemCompras
@@ -167,14 +174,176 @@ namespace ProjetoDA.Controller
             {
                 var compra = context.Compras.Find(compraId);
                 var utilizadorFechou = context.Users.Find(utilizadorId);
+
                 if (compra != null)
                 {
                     compra.Estado = Estado.fechado;
                     compra.DataAlteracao = DateTime.Now;
                     compra.DataFechar = DateTime.Now;
                     compra.UserFechou = utilizadorFechou;
+
                     context.SaveChanges();
                 }
+            }
+        }
+
+        // ===========================
+        // MÉTODOS NECESSÁRIOS PARA O FORM
+        // ===========================
+
+        public Compra ObterCabecalhoCompra(int compraId)
+        {
+            using (var context = new ShoppingContext())
+            {
+                return context.Compras
+                    .FirstOrDefault(c => c.Id == compraId);
+            }
+        }
+
+        public int AdicionarItem(int compraId, string nomeCompra, int artigoId, int quantidadePrevista, int utilizadorId)
+        {
+            using (var context = new ShoppingContext())
+            {
+                Compra compra;
+
+                if (compraId == 0)
+                {
+                    compra = new Compra
+                    {
+                        Nome = nomeCompra,
+                        Estado = Estado.aberto,
+                        DataCriacao = DateTime.Now,
+                        DataAlteracao = DateTime.Now,
+                        UserCriador = context.Users.Find(utilizadorId)
+                    };
+
+                    context.Compras.Add(compra);
+                    context.SaveChanges();
+
+                    compraId = compra.Id;
+                }
+                else
+                {
+                    compra = context.Compras.Find(compraId);
+                }
+
+                var artigo = context.Artigos.Find(artigoId);
+
+                var item = new ItemCompra
+                {
+                    Compra = compra,
+                    Artigo = artigo,
+                    QuantidadePrevista = quantidadePrevista,
+                    QuantidadeAdquirida = 0,
+                    PrecoUnitario = 0,
+                    DataCriacao = DateTime.Now,
+                    DataAlteracao = DateTime.Now,
+                    UserCriador = context.Users.Find(utilizadorId)
+                };
+
+                context.ItemCompras.Add(item);
+
+                context.SaveChanges();
+
+                return compraId;
+            }
+        }
+
+        public ItemCompra ObterDetalhesItem(int itemId)
+        {
+            using (var context = new ShoppingContext())
+            {
+                return context.ItemCompras
+                    .Include(i => i.Artigo)
+                    .Include(i => i.Artigo.TipoArtigo)
+                    .FirstOrDefault(i => i.Id == itemId);
+            }
+        }
+
+        public void AtualizarItem(int itemId, int artigoId, int quantidadePrevista, int compraId)
+        {
+            using (var context = new ShoppingContext())
+            {
+                var item = context.ItemCompras
+                    .Include(i => i.Compra)
+                    .FirstOrDefault(i => i.Id == itemId);
+
+                if (item == null)
+                    return;
+
+                item.Artigo = context.Artigos.Find(artigoId);
+                item.QuantidadePrevista = quantidadePrevista;
+                item.DataAlteracao = DateTime.Now;
+
+                var compra = context.Compras.Find(compraId);
+
+                if (compra != null)
+                    compra.DataAlteracao = DateTime.Now;
+
+                context.SaveChanges();
+            }
+        }
+
+        public void RemoverItem(int itemId, int compraId)
+        {
+            using (var context = new ShoppingContext())
+            {
+                var item = context.ItemCompras.Find(itemId);
+
+                if (item != null)
+                {
+                    context.ItemCompras.Remove(item);
+
+                    var compra = context.Compras.Find(compraId);
+
+                    if (compra != null)
+                        compra.DataAlteracao = DateTime.Now;
+
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        public List<ItemCompra> ObterItensPlaneados(int compraId)
+        {
+            using (var context = new ShoppingContext())
+            {
+                return context.ItemCompras
+                    .Include(i => i.Artigo)
+                    .Where(i => i.Compra.Id == compraId)
+                    .ToList();
+            }
+        }
+
+        public void GuardarCompra(int compraId, string nomeCompra, int utilizadorId)
+        {
+            using (var context = new ShoppingContext())
+            {
+                if (compraId == 0)
+                {
+                    var compra = new Compra
+                    {
+                        Nome = nomeCompra,
+                        Estado = Estado.aberto,
+                        DataCriacao = DateTime.Now,
+                        DataAlteracao = DateTime.Now,
+                        UserCriador = context.Users.Find(utilizadorId)
+                    };
+
+                    context.Compras.Add(compra);
+                }
+                else
+                {
+                    var compra = context.Compras.Find(compraId);
+
+                    if (compra != null)
+                    {
+                        compra.Nome = nomeCompra;
+                        compra.DataAlteracao = DateTime.Now;
+                    }
+                }
+
+                context.SaveChanges();
             }
         }
     }

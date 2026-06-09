@@ -8,20 +8,20 @@ namespace ProjetoDA.Views {
     public partial class Formulário_CriaçãoAlteração_Compra_Planeada : Form {
         private int _compraId;
         private bool _modoLeitura;
-        private CriacaoCompraController _controller;
+        private CompraController _controller;
 
         public Formulário_CriaçãoAlteração_Compra_Planeada() {
             InitializeComponent();
             _compraId = 0;
             _modoLeitura = false;
-            _controller = new CriacaoCompraController();
+            _controller = new CompraController();
         }
 
         public Formulário_CriaçãoAlteração_Compra_Planeada(int compraId) {
             InitializeComponent();
             _compraId = compraId;
             _modoLeitura = false;
-            _controller = new CriacaoCompraController();
+            _controller = new CompraController();
         }
 
         private void Formulário_CriaçãoAlteração_Compra_Planeada_Load(object sender, EventArgs e) {
