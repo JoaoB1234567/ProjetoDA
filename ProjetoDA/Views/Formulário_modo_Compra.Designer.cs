@@ -56,23 +56,21 @@ namespace ProjetoDA.Views
             this.grpRegistarItem = new System.Windows.Forms.GroupBox();
             this.btnRegistarItem = new System.Windows.Forms.Button();
             this.txtPrecoUnitario = new System.Windows.Forms.TextBox();
+            this.lblPrecoUnitario = new System.Windows.Forms.Label();
             this.numQtdAdquirida = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblQtdAdquirida = new System.Windows.Forms.Label();
             this.grpAdicionarExtra = new System.Windows.Forms.GroupBox();
-            this.btnAdicionarExtra = new System.Windows.Forms.Button();
             this.txtObservacoes = new System.Windows.Forms.TextBox();
+            this.lblObservacoes = new System.Windows.Forms.Label();
             this.txtPrecoExtra = new System.Windows.Forms.TextBox();
+            this.lblPrecoExtra = new System.Windows.Forms.Label();
             this.numQtdExtra = new System.Windows.Forms.NumericUpDown();
+            this.lblQtdExtra = new System.Windows.Forms.Label();
             this.cmbArtigoExtra = new System.Windows.Forms.ComboBox();
+            this.lblArtigoExtra = new System.Windows.Forms.Label();
             this.cmbTipoArtigoExtra = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblOrcamentoDisponivel = new System.Windows.Forms.Label();
-            this.btnFecharCompra = new System.Windows.Forms.Button();
+            this.lblTipoArtigoExtra = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensCompra)).BeginInit();
             this.grpRegistarItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQtdAdquirida)).BeginInit();
@@ -82,13 +80,13 @@ namespace ProjetoDA.Views
             // 
             // lblNomeCompra
             // 
-            this.lblNomeCompra.AutoSize = true;
             this.lblNomeCompra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNomeCompra.Location = new System.Drawing.Point(20, 20);
+            this.lblNomeCompra.Location = new System.Drawing.Point(24, 47);
+            this.lblNomeCompra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomeCompra.Name = "lblNomeCompra";
-            this.lblNomeCompra.Size = new System.Drawing.Size(164, 24);
-            this.lblNomeCompra.TabIndex = 0;
-            this.lblNomeCompra.Text = "Carrinho Atual: ";
+            this.lblNomeCompra.Size = new System.Drawing.Size(600, 31);
+            this.lblNomeCompra.TabIndex = 6;
+            this.lblNomeCompra.Text = "A Listar Compras:";
             // 
             // dgvItensCompra
             // 
@@ -96,229 +94,216 @@ namespace ProjetoDA.Views
             this.dgvItensCompra.AllowUserToDeleteRows = false;
             this.dgvItensCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvItensCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItensCompra.Location = new System.Drawing.Point(20, 60);
+            this.dgvItensCompra.Location = new System.Drawing.Point(28, 96);
+            this.dgvItensCompra.Margin = new System.Windows.Forms.Padding(4);
             this.dgvItensCompra.MultiSelect = false;
             this.dgvItensCompra.Name = "dgvItensCompra";
             this.dgvItensCompra.ReadOnly = true;
             this.dgvItensCompra.RowHeadersWidth = 51;
             this.dgvItensCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItensCompra.Size = new System.Drawing.Size(850, 300);
-            this.dgvItensCompra.TabIndex = 1;
-            this.dgvItensCompra.SelectionChanged += new System.EventHandler(this.DgvItensCompra_SelectionChanged);
+            this.dgvItensCompra.Size = new System.Drawing.Size(910, 636);
+            this.dgvItensCompra.TabIndex = 7;
             // 
             // grpRegistarItem
             // 
             this.grpRegistarItem.Controls.Add(this.btnRegistarItem);
             this.grpRegistarItem.Controls.Add(this.txtPrecoUnitario);
+            this.grpRegistarItem.Controls.Add(this.lblPrecoUnitario);
             this.grpRegistarItem.Controls.Add(this.numQtdAdquirida);
-            this.grpRegistarItem.Controls.Add(this.label2);
-            this.grpRegistarItem.Controls.Add(this.label1);
-            this.grpRegistarItem.Location = new System.Drawing.Point(20, 380);
+            this.grpRegistarItem.Controls.Add(this.lblQtdAdquirida);
+            this.grpRegistarItem.Location = new System.Drawing.Point(977, 105);
+            this.grpRegistarItem.Margin = new System.Windows.Forms.Padding(4);
             this.grpRegistarItem.Name = "grpRegistarItem";
-            this.grpRegistarItem.Size = new System.Drawing.Size(400, 150);
-            this.grpRegistarItem.TabIndex = 2;
+            this.grpRegistarItem.Padding = new System.Windows.Forms.Padding(4);
+            this.grpRegistarItem.Size = new System.Drawing.Size(513, 252);
+            this.grpRegistarItem.TabIndex = 8;
             this.grpRegistarItem.TabStop = false;
-            this.grpRegistarItem.Text = "Registar Item do Carrinho";
+            this.grpRegistarItem.Text = "Registar Item ";
             // 
             // btnRegistarItem
             // 
-            this.btnRegistarItem.Location = new System.Drawing.Point(130, 100);
+            this.btnRegistarItem.Location = new System.Drawing.Point(316, 201);
+            this.btnRegistarItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistarItem.Name = "btnRegistarItem";
-            this.btnRegistarItem.Size = new System.Drawing.Size(250, 35);
-            this.btnRegistarItem.TabIndex = 4;
-            this.btnRegistarItem.Text = "Atualizar Item";
+            this.btnRegistarItem.Size = new System.Drawing.Size(189, 43);
+            this.btnRegistarItem.TabIndex = 0;
+            this.btnRegistarItem.Text = "Atualizar Item no Carrinho";
             this.btnRegistarItem.UseVisualStyleBackColor = true;
-            this.btnRegistarItem.Click += new System.EventHandler(this.BtnRegistarItem_Click);
             // 
             // txtPrecoUnitario
             // 
-            this.txtPrecoUnitario.Location = new System.Drawing.Point(130, 65);
+            this.txtPrecoUnitario.Location = new System.Drawing.Point(23, 134);
+            this.txtPrecoUnitario.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecoUnitario.Name = "txtPrecoUnitario";
-            this.txtPrecoUnitario.Size = new System.Drawing.Size(250, 22);
-            this.txtPrecoUnitario.TabIndex = 3;
+            this.txtPrecoUnitario.Size = new System.Drawing.Size(159, 22);
+            this.txtPrecoUnitario.TabIndex = 1;
+            // 
+            // lblPrecoUnitario
+            // 
+            this.lblPrecoUnitario.Location = new System.Drawing.Point(20, 105);
+            this.lblPrecoUnitario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrecoUnitario.Name = "lblPrecoUnitario";
+            this.lblPrecoUnitario.Size = new System.Drawing.Size(133, 25);
+            this.lblPrecoUnitario.TabIndex = 2;
+            this.lblPrecoUnitario.Text = "Preço Unitário (€):";
             // 
             // numQtdAdquirida
             // 
-            this.numQtdAdquirida.Location = new System.Drawing.Point(130, 30);
+            this.numQtdAdquirida.Location = new System.Drawing.Point(23, 66);
+            this.numQtdAdquirida.Margin = new System.Windows.Forms.Padding(4);
             this.numQtdAdquirida.Name = "numQtdAdquirida";
-            this.numQtdAdquirida.Size = new System.Drawing.Size(250, 22);
-            this.numQtdAdquirida.TabIndex = 2;
+            this.numQtdAdquirida.Size = new System.Drawing.Size(67, 22);
+            this.numQtdAdquirida.TabIndex = 3;
             // 
-            // label2
+            // lblQtdAdquirida
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Preço Unitário:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Qtd. Adquirida:";
+            this.lblQtdAdquirida.Location = new System.Drawing.Point(20, 43);
+            this.lblQtdAdquirida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQtdAdquirida.Name = "lblQtdAdquirida";
+            this.lblQtdAdquirida.Size = new System.Drawing.Size(133, 25);
+            this.lblQtdAdquirida.TabIndex = 4;
+            this.lblQtdAdquirida.Text = "Qtd. Adquirida:";
             // 
             // grpAdicionarExtra
             // 
-            this.grpAdicionarExtra.Controls.Add(this.btnAdicionarExtra);
+            this.grpAdicionarExtra.Controls.Add(this.button1);
             this.grpAdicionarExtra.Controls.Add(this.txtObservacoes);
+            this.grpAdicionarExtra.Controls.Add(this.lblObservacoes);
             this.grpAdicionarExtra.Controls.Add(this.txtPrecoExtra);
+            this.grpAdicionarExtra.Controls.Add(this.lblPrecoExtra);
             this.grpAdicionarExtra.Controls.Add(this.numQtdExtra);
+            this.grpAdicionarExtra.Controls.Add(this.lblQtdExtra);
             this.grpAdicionarExtra.Controls.Add(this.cmbArtigoExtra);
+            this.grpAdicionarExtra.Controls.Add(this.lblArtigoExtra);
             this.grpAdicionarExtra.Controls.Add(this.cmbTipoArtigoExtra);
-            this.grpAdicionarExtra.Controls.Add(this.label7);
-            this.grpAdicionarExtra.Controls.Add(this.label6);
-            this.grpAdicionarExtra.Controls.Add(this.label5);
-            this.grpAdicionarExtra.Controls.Add(this.label4);
-            this.grpAdicionarExtra.Controls.Add(this.label3);
-            this.grpAdicionarExtra.Location = new System.Drawing.Point(440, 380);
+            this.grpAdicionarExtra.Controls.Add(this.lblTipoArtigoExtra);
+            this.grpAdicionarExtra.Location = new System.Drawing.Point(977, 427);
+            this.grpAdicionarExtra.Margin = new System.Windows.Forms.Padding(4);
             this.grpAdicionarExtra.Name = "grpAdicionarExtra";
-            this.grpAdicionarExtra.Size = new System.Drawing.Size(430, 230);
-            this.grpAdicionarExtra.TabIndex = 3;
+            this.grpAdicionarExtra.Padding = new System.Windows.Forms.Padding(4);
+            this.grpAdicionarExtra.Size = new System.Drawing.Size(540, 252);
+            this.grpAdicionarExtra.TabIndex = 9;
             this.grpAdicionarExtra.TabStop = false;
-            this.grpAdicionarExtra.Text = "Adicionar Artigo Extra (Não Previsto)";
-            // 
-            // btnAdicionarExtra
-            // 
-            this.btnAdicionarExtra.Location = new System.Drawing.Point(120, 185);
-            this.btnAdicionarExtra.Name = "btnAdicionarExtra";
-            this.btnAdicionarExtra.Size = new System.Drawing.Size(290, 35);
-            this.btnAdicionarExtra.TabIndex = 10;
-            this.btnAdicionarExtra.Text = "Adicionar Extra ao Carrinho";
-            this.btnAdicionarExtra.UseVisualStyleBackColor = true;
-            this.btnAdicionarExtra.Click += new System.EventHandler(this.BtnAdicionarExtra_Click);
+            this.grpAdicionarExtra.Text = "Adicionar Artigo Não Previsto";
             // 
             // txtObservacoes
             // 
-            this.txtObservacoes.Location = new System.Drawing.Point(120, 155);
+            this.txtObservacoes.Location = new System.Drawing.Point(133, 144);
+            this.txtObservacoes.Margin = new System.Windows.Forms.Padding(4);
             this.txtObservacoes.Name = "txtObservacoes";
-            this.txtObservacoes.Size = new System.Drawing.Size(290, 22);
-            this.txtObservacoes.TabIndex = 9;
+            this.txtObservacoes.Size = new System.Drawing.Size(385, 22);
+            this.txtObservacoes.TabIndex = 1;
+            // 
+            // lblObservacoes
+            // 
+            this.lblObservacoes.Location = new System.Drawing.Point(20, 148);
+            this.lblObservacoes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblObservacoes.Name = "lblObservacoes";
+            this.lblObservacoes.Size = new System.Drawing.Size(107, 25);
+            this.lblObservacoes.TabIndex = 2;
+            this.lblObservacoes.Text = "Observações:";
             // 
             // txtPrecoExtra
             // 
-            this.txtPrecoExtra.Location = new System.Drawing.Point(120, 125);
+            this.txtPrecoExtra.Location = new System.Drawing.Point(360, 105);
+            this.txtPrecoExtra.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecoExtra.Name = "txtPrecoExtra";
-            this.txtPrecoExtra.Size = new System.Drawing.Size(290, 22);
-            this.txtPrecoExtra.TabIndex = 8;
+            this.txtPrecoExtra.Size = new System.Drawing.Size(145, 22);
+            this.txtPrecoExtra.TabIndex = 3;
+            // 
+            // lblPrecoExtra
+            // 
+            this.lblPrecoExtra.Location = new System.Drawing.Point(267, 108);
+            this.lblPrecoExtra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrecoExtra.Name = "lblPrecoExtra";
+            this.lblPrecoExtra.Size = new System.Drawing.Size(93, 25);
+            this.lblPrecoExtra.TabIndex = 4;
+            this.lblPrecoExtra.Text = "Preço (€):";
             // 
             // numQtdExtra
             // 
-            this.numQtdExtra.Location = new System.Drawing.Point(120, 95);
+            this.numQtdExtra.Location = new System.Drawing.Point(133, 106);
+            this.numQtdExtra.Margin = new System.Windows.Forms.Padding(4);
+            this.numQtdExtra.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numQtdExtra.Name = "numQtdExtra";
-            this.numQtdExtra.Size = new System.Drawing.Size(290, 22);
-            this.numQtdExtra.TabIndex = 7;
+            this.numQtdExtra.Size = new System.Drawing.Size(58, 22);
+            this.numQtdExtra.TabIndex = 5;
             this.numQtdExtra.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
+            // lblQtdExtra
+            // 
+            this.lblQtdExtra.Location = new System.Drawing.Point(20, 108);
+            this.lblQtdExtra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQtdExtra.Name = "lblQtdExtra";
+            this.lblQtdExtra.Size = new System.Drawing.Size(107, 25);
+            this.lblQtdExtra.TabIndex = 6;
+            this.lblQtdExtra.Text = "Qtd. Extra:";
+            // 
             // cmbArtigoExtra
             // 
-            this.cmbArtigoExtra.FormattingEnabled = true;
-            this.cmbArtigoExtra.Location = new System.Drawing.Point(120, 60);
+            this.cmbArtigoExtra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbArtigoExtra.Location = new System.Drawing.Point(133, 64);
+            this.cmbArtigoExtra.Margin = new System.Windows.Forms.Padding(4);
             this.cmbArtigoExtra.Name = "cmbArtigoExtra";
-            this.cmbArtigoExtra.Size = new System.Drawing.Size(290, 24);
-            this.cmbArtigoExtra.TabIndex = 6;
+            this.cmbArtigoExtra.Size = new System.Drawing.Size(151, 24);
+            this.cmbArtigoExtra.TabIndex = 7;
+            // 
+            // lblArtigoExtra
+            // 
+            this.lblArtigoExtra.Location = new System.Drawing.Point(20, 68);
+            this.lblArtigoExtra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblArtigoExtra.Name = "lblArtigoExtra";
+            this.lblArtigoExtra.Size = new System.Drawing.Size(107, 25);
+            this.lblArtigoExtra.TabIndex = 8;
+            this.lblArtigoExtra.Text = "Artigo:";
             // 
             // cmbTipoArtigoExtra
             // 
-            this.cmbTipoArtigoExtra.FormattingEnabled = true;
-            this.cmbTipoArtigoExtra.Location = new System.Drawing.Point(120, 30);
+            this.cmbTipoArtigoExtra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoArtigoExtra.Location = new System.Drawing.Point(133, 27);
+            this.cmbTipoArtigoExtra.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoArtigoExtra.Name = "cmbTipoArtigoExtra";
-            this.cmbTipoArtigoExtra.Size = new System.Drawing.Size(290, 24);
-            this.cmbTipoArtigoExtra.TabIndex = 5;
-            this.cmbTipoArtigoExtra.SelectedIndexChanged += new System.EventHandler(this.CmbTipoArtigoExtra_SelectedIndexChanged);
+            this.cmbTipoArtigoExtra.Size = new System.Drawing.Size(151, 24);
+            this.cmbTipoArtigoExtra.TabIndex = 9;
             // 
-            // label7
+            // lblTipoArtigoExtra
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 158);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 16);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Observações:";
+            this.lblTipoArtigoExtra.Location = new System.Drawing.Point(20, 31);
+            this.lblTipoArtigoExtra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipoArtigoExtra.Name = "lblTipoArtigoExtra";
+            this.lblTipoArtigoExtra.Size = new System.Drawing.Size(107, 25);
+            this.lblTipoArtigoExtra.TabIndex = 10;
+            this.lblTipoArtigoExtra.Text = "Tipo Artigo:";
             // 
-            // label6
+            // button1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 128);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 16);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Preço:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 98);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 16);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Qtd:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Artigo:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Categoria:";
-            // 
-            // lblOrcamentoDisponivel
-            // 
-            this.lblOrcamentoDisponivel.AutoSize = true;
-            this.lblOrcamentoDisponivel.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
-            this.lblOrcamentoDisponivel.Location = new System.Drawing.Point(20, 560);
-            this.lblOrcamentoDisponivel.Name = "lblOrcamentoDisponivel";
-            this.lblOrcamentoDisponivel.Size = new System.Drawing.Size(182, 22);
-            this.lblOrcamentoDisponivel.TabIndex = 4;
-            this.lblOrcamentoDisponivel.Text = "Saldo Disponível: ";
-            // 
-            // btnFecharCompra
-            // 
-            this.btnFecharCompra.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnFecharCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFecharCompra.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btnFecharCompra.ForeColor = System.Drawing.Color.White;
-            this.btnFecharCompra.Location = new System.Drawing.Point(20, 600);
-            this.btnFecharCompra.Name = "btnFecharCompra";
-            this.btnFecharCompra.Size = new System.Drawing.Size(400, 45);
-            this.btnFecharCompra.TabIndex = 5;
-            this.btnFecharCompra.Text = "FINALIZAR COMPRA";
-            this.btnFecharCompra.UseVisualStyleBackColor = false;
-            this.btnFecharCompra.Click += new System.EventHandler(this.BtnFecharCompra_Click);
+            this.button1.Location = new System.Drawing.Point(343, 201);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(189, 43);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Inserir artigo não previsto";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Formulário_modo_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 670);
-            this.Controls.Add(this.btnFecharCompra);
-            this.Controls.Add(this.lblOrcamentoDisponivel);
+            this.ClientSize = new System.Drawing.Size(1538, 803);
             this.Controls.Add(this.grpAdicionarExtra);
             this.Controls.Add(this.grpRegistarItem);
             this.Controls.Add(this.dgvItensCompra);
             this.Controls.Add(this.lblNomeCompra);
             this.Name = "Formulário_modo_Compra";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Projeto DA - Modo de Compra";
-            this.Load += new System.EventHandler(this.Formulário_modo_Compra_Load);
+            this.Text = "Formulário_modo_Compra";
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensCompra)).EndInit();
             this.grpRegistarItem.ResumeLayout(false);
             this.grpRegistarItem.PerformLayout();
@@ -327,10 +312,30 @@ namespace ProjetoDA.Views
             this.grpAdicionarExtra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQtdExtra)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblNomeCompra;
+        private System.Windows.Forms.DataGridView dgvItensCompra;
+        private System.Windows.Forms.GroupBox grpRegistarItem;
+        private System.Windows.Forms.Button btnRegistarItem;
+        private System.Windows.Forms.TextBox txtPrecoUnitario;
+        private System.Windows.Forms.Label lblPrecoUnitario;
+        private System.Windows.Forms.NumericUpDown numQtdAdquirida;
+        private System.Windows.Forms.Label lblQtdAdquirida;
+        private System.Windows.Forms.GroupBox grpAdicionarExtra;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtObservacoes;
+        private System.Windows.Forms.Label lblObservacoes;
+        private System.Windows.Forms.TextBox txtPrecoExtra;
+        private System.Windows.Forms.Label lblPrecoExtra;
+        private System.Windows.Forms.NumericUpDown numQtdExtra;
+        private System.Windows.Forms.Label lblQtdExtra;
+        private System.Windows.Forms.ComboBox cmbArtigoExtra;
+        private System.Windows.Forms.Label lblArtigoExtra;
+        private System.Windows.Forms.ComboBox cmbTipoArtigoExtra;
+        private System.Windows.Forms.Label lblTipoArtigoExtra;
     }
 }
