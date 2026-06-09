@@ -40,7 +40,7 @@ namespace ProjetoDA.Views
             this.lblFiltro = new System.Windows.Forms.Label();
             this.cmbFiltroEstado = new System.Windows.Forms.ComboBox();
             this.btnNovaCompra = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditarCompra = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,25 +110,25 @@ namespace ProjetoDA.Views
             this.btnNovaCompra.Text = "Criar Lista Nova";
             this.btnNovaCompra.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnEditarCompra
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(106, 452);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(279, 73);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Ver/Editar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEditarCompra.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarCompra.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEditarCompra.Location = new System.Drawing.Point(106, 452);
+            this.btnEditarCompra.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarCompra.Name = "btnEditarCompra";
+            this.btnEditarCompra.Size = new System.Drawing.Size(279, 73);
+            this.btnEditarCompra.TabIndex = 8;
+            this.btnEditarCompra.Text = "Ver/Editar";
+            this.btnEditarCompra.UseVisualStyleBackColor = false;
             // 
             // Formulário_Planeamento_Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1527, 739);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEditarCompra);
             this.Controls.Add(this.btnNovaCompra);
             this.Controls.Add(this.cmbFiltroEstado);
             this.Controls.Add(this.lblFiltro);
@@ -143,12 +143,5 @@ namespace ProjetoDA.Views
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.DataGridView dgvCompras;
-        private System.Windows.Forms.Label lblFiltro;
-        private System.Windows.Forms.ComboBox cmbFiltroEstado;
-        private System.Windows.Forms.Button btnNovaCompra;
-        private System.Windows.Forms.Button button1;
     }
 }
